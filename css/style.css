@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 65%;
+    padding: 30px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 12px;
+    background-color: #F5F7F7;
+}
+
+.logo{
+    padding: 30px;
+    text-align: center;
+}
+
+.logo img{
+    width: 330px;
+}
+
+.area-input{
+    text-align: center;
+}
+
+.area-input input{
+    width: 550px;
+    margin-right: 25px;
+}
+
+.area-input input, .area-input button{
+    padding: 8px 23px;
+    border-radius: 12px;
+}
+
+.list-tasks li{
+    display: flex;
+    justify-content: space-between;
+    line-height: 50px;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid #D3D3D3;
+    padding: 0 15px;
+}
+
