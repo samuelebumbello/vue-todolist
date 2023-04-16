@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==' crossorigin='anonymous'/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==' crossorigin='anonymous'/>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Vue Todolist</title>
 </head>
@@ -23,20 +24,19 @@
         </div>
 
         <div class="container">
-            <!-- qui bisogna creare il msg per farlo apparire quando sono finite le task -->
+            <h3 v-if="tasks.length === 0 ">Non ci sono più tasks</h3>
 
             <ul class="list-tasks">
-                <li>
-                    <span>tasks</span>
-                    <i class="fa-solid fa-xmark"></i>
-                </li>
-                <li>
-                    <span>Tasks</span>
-                    <i class="fa-solid fa-xmark"></i>
-                </li>
-                <li>
-                    <span>Tasks</span>
-                    <i class="fa-solid fa-xmark"></i>
+                <li
+                @click="task.done = !task.done" 
+                v-for="task in tasks" 
+                >
+                    <span :class="{done : task.done}">{{task.text}}</span>
+                    <i 
+                    @click.stop="taskRemove(index , task)"
+                    class="fa-solid fa-xmark"
+                    >
+                    </i>
                 </li>
             </ul>
         </div>

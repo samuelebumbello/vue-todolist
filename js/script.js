@@ -10,13 +10,24 @@ createApp({
                 },
                 {
                     text: 'Andare a fare la spesa',
-                    done: true
+                    done: false
                 },
                 {
                     text: 'Prenotare visita radiologa',
                     done: false
                 },
             ],
+            errorMsg: ''
         }
     },
+
+    methods:{
+        taskRemove(index, task){
+            if(task.done){
+                this.tasks.splice(index,1);
+            }
+        }
+    }
+
+
 }).mount("#app")
