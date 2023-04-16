@@ -34,6 +34,7 @@
 .area-input input, .area-input button{
     padding: 8px 23px;
     border-radius: 12px;
+    
 }
 
 .list-tasks li{
@@ -48,4 +49,8 @@
 
 .done{ 
     text-decoration: line-through;
+}
+
+.error-msg{
+    color: red;
 }

@@ -16,10 +16,10 @@
         </div>
 
         <div class="area-input">
-            <input placeholder="Aggiungi una task">
-            <button>Aggiungi</button>
+            <input v-model="newTaskText" placeholder="Aggiungi una task">
+            <button @click="newTasks">Aggiungi</button>
             <div>
-                <span class="error-msg"></span>
+                <span class="error-msg">{{errorMsg}}</span>
             </div>
         </div>
 
