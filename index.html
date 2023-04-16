@@ -16,7 +16,7 @@
         </div>
 
         <div class="area-input">
-            <input v-model="newTaskText" placeholder="Aggiungi una task">
+            <input @keyup.enter="newTasks" v-model="newTaskText" placeholder="Aggiungi una task">
             <button @click="newTasks">Aggiungi</button>
             <div>
                 <span class="error-msg">{{errorMsg}}</span>
@@ -34,7 +34,7 @@
                     <span :class="{done : task.done}">{{task.text}}</span>
                     <i 
                     @click.stop="taskRemove(index , task)"
-                    class="fa-solid fa-xmark"
+                    class="fa-regular fa-circle-xmark"
                     >
                     </i>
                 </li>

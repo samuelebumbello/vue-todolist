@@ -42,6 +42,8 @@ createApp({
         taskRemove(index, task){
             if(task.done){
                 this.tasks.splice(index,1);
+            }else{
+                this.errorMsg = `Per eliminare la task devi prima confermala`
             }
         }
     }
